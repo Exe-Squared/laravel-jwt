@@ -1,6 +1,6 @@
 <?php
 
-namespace UniSharp\JWT\Auth\Guards;
+namespace Clystnet\JWT\Auth\Guards;
 
 use Carbon\Carbon;
 use Tymon\JWTAuth\JWT;

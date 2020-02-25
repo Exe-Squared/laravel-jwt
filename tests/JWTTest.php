@@ -8,7 +8,7 @@ use Tymon\JWTAuth\Facades\JWTAuth;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Config;
 use Tymon\JWTAuth\Exceptions\JWTException;
-use UniSharp\JWT\Auth\Guards\JWTAuthGuard;
+use Clystnet\JWT\Auth\Guards\JWTAuthGuard;
 use Symfony\Component\HttpKernel\Exception\BadRequestHttpException;
 
 class JWTTest extends TestCase

@@ -1,33 +1,44 @@
 {
-    "name": "unisharp/laravel-jwt",
-    "description": "A jwt package for reisssuing token purpose based on jwt-auth package.",
+    "name": "clystnet/laravel-jwt",
+    "description": "A jwt package for reisssuing token purpose based on jwt-auth package. This is a fork of the unisharp/laravel-jwt package.",
     "keywords": ["jwt", "reissue", "concurrency", "token", "laravel"],
     "license": "MIT",
     "authors": [
         {
             "name": "UniSharp Ltd.",
             "email": "unisharp-service@unisharp.com"
+        },
+        {
+            "name": "Christopher Pratt",
+            "email": "chris.pratt@clystnet.com",
+            "homepage": "https://www.clystnet.com",
+            "role": "Developer"
         }
     ],
     "require": {
-        "php": "^5.6.4 || ^7.0",
-        "tymon/jwt-auth": "^1.0.0-rc.5.1",
-        "illuminate/support": ">=5.0.0"
+        "php": "^7.1",
+        "tymon/jwt-auth": "1.0.0-rc.5.1",
+        "illuminate/support": "^5.6 | ^6.0"
     },
     "require-dev": {
-
+        "mockery/mockery": "~1.3",
+        "phpunit/phpunit": "^8.5",
+        "codedungeon/phpunit-result-printer": "dev-master"
     },
     "autoload": {
         "psr-4": {
             "UniSharp\\JWT\\": "src/",
             "Tests\\": "tests/"
-        }
+        },
+        "classmap": [
+            "src/"
+        ]
     },
     "minimum-stability": "dev",
     "extra": {
         "laravel": {
             "providers": [
-                "UniSharp\\JWT\\JWTServiceProvider"
+                "Clystnet\\JWT\\JWTServiceProvider"
             ],
             "aliases": {
             }

@@ -1,6 +1,6 @@
 <?php
 
-namespace UniSharp\JWT\Http\Middleware;
+namespace Clystnet\JWT\Http\Middleware;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -22,10 +22,11 @@ class JWTRefresh
     /**
      * Handle an incoming request.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \Closure  $next
+     * @param \Illuminate\Http\Request $request
+     * @param \Closure $next
      *
      * @return mixed
+     * @throws TokenBlacklistedException
      */
     public function handle($request, \Closure $next)
     {
@@ -58,11 +59,10 @@ class JWTRefresh
     /**
      * Attempt to authenticate a user via the token in the request.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
      *
-     * @throws \Symfony\Component\HttpKernel\Exception\UnauthorizedHttpException
-     *
-     * @return void
+     * @return bool|void
+     * @throws TokenBlacklistedException
      */
     public function authenticate(Request $request)
     {

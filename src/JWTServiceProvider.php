@@ -1,10 +1,10 @@
 <?php
 
-namespace UniSharp\JWT;
+namespace Clystnet\JWT;
 
 use Illuminate\Support\ServiceProvider;
-use UniSharp\JWT\Auth\Guards\JWTAuthGuard;
-use UniSharp\JWT\Http\Middleware\JWTRefresh;
+use Clystnet\JWT\Auth\Guards\JWTAuthGuard;
+use Clystnet\JWT\Http\Middleware\JWTRefresh;
 
 class JWTServiceProvider extends ServiceProvider
 {
