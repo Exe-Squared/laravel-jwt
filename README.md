@@ -1,6 +1,6 @@
 Laravel JWT
 ==========
-[![Software License][ico-license]](LICENSE.md)
+**This is a fork of the UniSharp/laravel-jwt package**
 
 ## Approach
 
