@@ -1,33 +1,23 @@
 Laravel JWT
 ==========
-![php-badge][ico-php-version]
-[![Latest Version on Packagist][ico-version]][link-packagist]
 [![Software License][ico-license]](LICENSE.md)
-[![Build Status][ico-travis]][link-travis]
-[![Coverage Status][ico-scrutinizer]][link-scrutinizer]
-[![Quality Score][ico-code-quality]][link-code-quality]
-[![Total Downloads][ico-downloads]][link-downloads]
 
 ## Approach
 
 If you pick `Tymon JWTAuth` as your jwt solution in your project, when you try to refresh your token, the package will blacklist your exchanged token (assume your blacklist feature is enabled). So when your client faces a concurrency use case,  your request might be rejected because that request is sent before your app renews jwt token returned by server. This package caches the refreshed jwt token in a short period to ensure your client side can get correct response even if your request carries an old token in a concurrency case.
 
-### Important Change
-
-We change our namespace Unisharp\JWT to UniSharp\JWT
-
 ## Installation
 
 * Via Composer
 ```
-composer require unisharp/laravel-jwt
+composer require clystnet/laravel-jwt
 ```
 
 * Add the Service Provider
 
 ```php
 Tymon\JWTAuth\Providers\LaravelServiceProvider::class,
-UniSharp\JWT\JWTServiceProvider::class,
+Clystnet\JWT\JWTServiceProvider::class,
 ```
 
 > In Lumen please use `Tymon\JWTAuth\Providers\LumenServiceProvider::class,`
@@ -43,7 +33,7 @@ Finally, you will want to publish the config using the following command:
 
 ```
 php artisan vendor:publish --provider="Tymon\JWTAuth\Providers\JWTAuthServiceProvider"
-php artisan vendor:publish --provider="UniSharp\JWT\JWTServiceProvider"
+php artisan vendor:publish --provider="Clystnet\JWT\JWTServiceProvider"
 ```
 
 Don't forget to set a secret key in the config file!
@@ -251,18 +241,4 @@ Get Payload for the given token manually:
 $payload = Auth::setToken('TokenToGetPayload')->getPayload();
 ```
 
-[ico-php-version]: https://img.shields.io/travis/php-v/UniSharp/laravel-jwt.svg
-[ico-version]: https://img.shields.io/packagist/v/unisharp/laravel-jwt.svg?style=flat-square
 [ico-license]: https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square
-[ico-travis]: https://img.shields.io/travis/UniSharp/laravel-jwt/master.svg?style=flat-square
-[ico-scrutinizer]: https://img.shields.io/scrutinizer/coverage/g/UniSharp/laravel-jwt.svg?style=flat-square
-[ico-code-quality]: https://img.shields.io/scrutinizer/g/UniSharp/laravel-jwt.svg?style=flat-square
-[ico-downloads]: https://img.shields.io/packagist/dt/UniSharp/laravel-jwt.svg?style=flat-square
-
-[link-packagist]: https://packagist.org/packages/unisharp/laravel-jwt
-[link-travis]: https://travis-ci.org/UniSharp/laravel-jwt
-[link-scrutinizer]: https://scrutinizer-ci.com/g/UniSharp/laravel-jwt/code-structure
-[link-code-quality]: https://scrutinizer-ci.com/g/UniSharp/laravel-jwt
-[link-downloads]: https://packagist.org/packages/UniSharp/laravel-jwt
-[link-author]: https://github.com/UniSharp
-[link-contributors]: ../../contributors
