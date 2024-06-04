@@ -3,10 +3,10 @@
 namespace Clystnet\JWT\Auth\Guards;
 
 use Carbon\Carbon;
-use Tymon\JWTAuth\JWT;
-use Tymon\JWTAuth\JWTGuard;
+use PHPOpenSourceSaver\JWTAuth\JWT;
+use PHPOpenSourceSaver\JWTAuth\JWTGuard;
 use Illuminate\Http\Request;
-use Tymon\JWTAuth\Facades\JWTAuth;
+use PHPOpenSourceSaver\JWTAuth\Facades\JWTAuth;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Config;
 use Illuminate\Contracts\Auth\UserProvider;
@@ -18,7 +18,7 @@ class JWTAuthGuard extends JWTGuard
     /**
      * Create a new authentication guard.
      *
-     * @param \Tymon\JWTAuth\JWT                      $jwt
+     * @param \PHPOpenSourceSaver\JWTAuth\JWT                      $jwt
      * @param \Illuminate\Contracts\Auth\UserProvider $provider
      * @param \Illuminate\Http\Request                $request
      */

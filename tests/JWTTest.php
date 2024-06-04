@@ -4,10 +4,10 @@ namespace Tests;
 use Mockery as m;
 use Carbon\Carbon;
 use PHPUnit\Framework\TestCase;
-use Tymon\JWTAuth\Facades\JWTAuth;
+use PHPOpenSourceSaver\JWTAuth\Facades\JWTAuth;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Config;
-use Tymon\JWTAuth\Exceptions\JWTException;
+use PHPOpenSourceSaver\JWTAuth\Exceptions\JWTException;
 use Clystnet\JWT\Auth\Guards\JWTAuthGuard;
 use Symfony\Component\HttpKernel\Exception\BadRequestHttpException;
 
@@ -112,7 +112,7 @@ class JWTTest extends TestCase
 
     protected function getTokenMockedJWT()
     {
-        $jwt = m::mock('Tymon\JWTAuth\JWT');
+        $jwt = m::mock('PHPOpenSourceSaver\JWTAuth\JWT');
         $jwt->shouldReceive('parser')
             ->andReturn($jwt);
         $jwt->shouldReceive('parseToken')
@@ -128,7 +128,7 @@ class JWTTest extends TestCase
     protected function getAuthGuard($jwt = null, $provider = null)
     {
         return new JWTAuthGuard(
-            $jwt ?: m::mock('Tymon\JWTAuth\JWT'),
+            $jwt ?: m::mock('PHPOpenSourceSaver\JWTAuth\JWT'),
             $provider ?: m::mock('Illuminate\Contracts\Auth\UserProvider'),
             \Illuminate\Http\Request::create('/', 'GET')
         );

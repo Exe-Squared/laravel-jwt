@@ -16,23 +16,23 @@ composer require clystnet/laravel-jwt
 * Add the Service Provider
 
 ```php
-Tymon\JWTAuth\Providers\LaravelServiceProvider::class,
+PHPOpenSourceSaver\JWTAuth\Providers\LaravelServiceProvider::class,
 Clystnet\JWT\JWTServiceProvider::class,
 ```
 
-> In Lumen please use `Tymon\JWTAuth\Providers\LumenServiceProvider::class,`
+> In Lumen please use `PHPOpenSourceSaver\JWTAuth\Providers\LumenServiceProvider::class,`
 
 Next, also in the app.php config file, under the aliases array, you may want to add the JWTAuth facade.
 
 ```
-'JWTAuth' => 'Tymon\JWTAuth\Facades\JWTAuth',
-'JWTFactory' => 'Tymon\JWTAuth\Facades\JWTFactory'
+'JWTAuth' => 'PHPOpenSourceSaver\JWTAuth\Facades\JWTAuth',
+'JWTFactory' => 'PHPOpenSourceSaver\JWTAuth\Facades\JWTFactory'
 ```
 
 Finally, you will want to publish the config using the following command:
 
 ```
-php artisan vendor:publish --provider="Tymon\JWTAuth\Providers\JWTAuthServiceProvider"
+php artisan vendor:publish --provider="PHPOpenSourceSaver\JWTAuth\Providers\JWTAuthServiceProvider"
 php artisan vendor:publish --provider="Clystnet\JWT\JWTServiceProvider"
 ```
 
