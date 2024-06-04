@@ -3,6 +3,7 @@
 namespace Clystnet\JWT\Auth\Guards;
 
 use Carbon\Carbon;
+use Illuminate\Events\Dispatcher;
 use PHPOpenSourceSaver\JWTAuth\JWT;
 use PHPOpenSourceSaver\JWTAuth\JWTGuard;
 use Illuminate\Http\Request;
@@ -24,7 +25,7 @@ class JWTAuthGuard extends JWTGuard
      */
     public function __construct(JWT $jwt, UserProvider $provider, Request $request)
     {
-        parent::__construct($jwt, $provider, $request);
+        parent::__construct($jwt, $provider, $request, new Dispatcher());
     }
 
     /**
